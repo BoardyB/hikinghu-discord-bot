@@ -38,7 +38,7 @@ for entry in new_posts:
     r = requests.post(WEBHOOK_URL, json=payload)
     if r.status_code == 200 or r.status_code == 204:
         print(f"Posted: {entry.title}")
-        posted_links.add(entry.link)
+        posted_links.append(entry.link)
     else:
         print(f"Failed to post {entry.title}: {r.text}")
 
