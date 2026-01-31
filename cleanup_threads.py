@@ -75,24 +75,17 @@ async def cleanup_inactive_threads():
 
         try:
             # Count messages in the thread
-            message_count = 0
-            async for _ in thread.history(limit=10):
-                message_count += 1
-                if message_count > 1:
-                    # Thread has replies, keep it
-                    break
-
-            if message_count <= 1:
+            if thread.message_count <= 1:
                 # Only the initial message exists, delete the thread
                 if DRY_RUN:
-                    print(f"[DRY RUN] Would delete inactive thread: '{thread.name}' (created {thread.created_at.strftime('%Y-%m-%d')}, {message_count} message(s))")
+                    print(f"[DRY RUN] Would delete inactive thread: '{thread.name}' (created {thread.created_at.strftime('%Y-%m-%d')}, {thread.message_count} message(s))")
                     return True
                 else:
-                    print(f"Deleting inactive thread: '{thread.name}' (created {thread.created_at.strftime('%Y-%m-%d')}, {message_count} message(s))")
+                    print(f"Deleting inactive thread: '{thread.name}' (created {thread.created_at.strftime('%Y-%m-%d')}, {thread.message_count} message(s))")
                     await thread.delete()
                     return True
             else:
-                print(f"Keeping active thread: '{thread.name}' ({message_count} messages)")
+                print(f"Keeping active thread: '{thread.name}' ({thread.message_count} messages)")
                 return False
 
         except discord.Forbidden:
