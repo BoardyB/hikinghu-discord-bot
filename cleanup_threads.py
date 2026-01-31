@@ -74,9 +74,8 @@ async def cleanup_inactive_threads():
             return False
 
         try:
-            # Count messages in the thread
+            # Check for thread message count and delete thread if there isn't any
             if thread.message_count < 1:
-                # Only the initial message exists, delete the thread
                 if DRY_RUN:
                     print(f"[DRY RUN] Would delete inactive thread: '{thread.name}' (created {thread.created_at.strftime('%Y-%m-%d')}, {thread.message_count} message(s))")
                     return True
