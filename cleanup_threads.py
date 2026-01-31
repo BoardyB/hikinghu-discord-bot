@@ -82,7 +82,7 @@ async def cleanup_inactive_threads():
                     # Thread has replies, keep it
                     break
 
-            if message_count < 1:
+            if message_count <= 1:
                 # Only the initial message exists, delete the thread
                 if DRY_RUN:
                     print(f"[DRY RUN] Would delete inactive thread: '{thread.name}' (created {thread.created_at.strftime('%Y-%m-%d')}, {message_count} message(s))")
