@@ -1,0 +1,6 @@
+# Dependencies for bot.py (RSS posting)
+feedparser==6.0.12
+requests==2.32.5
+
+# Dependencies for cleanup_threads.py (thread cleanup)
+discord.py==2.6.4
