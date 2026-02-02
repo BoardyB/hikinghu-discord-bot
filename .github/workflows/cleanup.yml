@@ -26,5 +26,5 @@ jobs:
         DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
         DISCORD_CHANNEL_ID: ${{ secrets.DISCORD_CHANNEL_ID }}
         INACTIVE_DAYS: "30"  # Delete threads with no replies after 30 days
-        DRY_RUN: "true"
+        DRY_RUN: "false"
 
