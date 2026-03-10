@@ -4,10 +4,10 @@ This bot monitors a subreddit RSS feed and posts new submissions to a Discord ch
 
 ## Features
 
-- 🔄 **Auto-posting**: Fetches new posts from r/hikingHungary every 30 minutes
-- 🧵 **Thread creation**: Creates a Discord thread for each Reddit post
-- 🗑️ **Auto-cleanup**: Removes threads with no replies after 14 days
-- 💾 **State management**: Tracks posted links to avoid duplicates
+- **Auto-posting**: Fetches new posts from r/hikingHungary every 30 minutes
+- **Thread creation**: Creates a Discord thread for each Reddit post
+- **Auto-cleanup**: Removes threads with no replies after 14 days
+- **State management**: Tracks posted links to avoid duplicates
 
 ## Setup
 
@@ -18,7 +18,7 @@ This bot monitors a subreddit RSS feed and posts new submissions to a Discord ch
 3. Go to the "Bot" section and click "Add Bot"
 4. Copy the bot token (you'll need this later)
 5. Under "Privileged Gateway Intents", enable:
-   - ✅ MESSAGE CONTENT INTENT
+   - MESSAGE CONTENT INTENT
 6. Go to OAuth2 → URL Generator
 7. Select scopes:
    - `bot`
